@@ -84,7 +84,7 @@
 
       @include tablet {
         display: block;
-        float: center;
+        float: none;
         max-width: 100%;
         margin: auto;
       }
@@ -157,7 +157,9 @@
       }
 
       .button {
-        background-color: black;
+        border-style: solid;
+        border-color: $Black;
+        background-color: $White;
         padding: 10px 35px;
 
         @include mobile {
@@ -165,14 +167,18 @@
         }
 
         &:hover {
-          opacity: 0.8;
+          background-color: $Black;
           cursor: pointer;
+
+          a {
+            color: $White;
+          }
         }
 
         a {
           text-transform: uppercase;
           text-decoration: none;
-          color: $White;
+          color: $Black;
           font-family: "Alata", sans-serif;
           letter-spacing: 5px;
         }
@@ -270,6 +276,11 @@
           text-align: center;
           margin: auto;
           font-weight: 400;
+
+          &:hover {
+            background-color: $Black;
+            color: $White;
+          }
         }
       }
     }
