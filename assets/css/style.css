@@ -93,9 +93,6 @@
     margin-left: 40px;
     text-transform: uppercase;
   }
-  .header-nav-menu li a:hover {
-    color: red;
-  }
 }
 
 * {
@@ -177,7 +174,7 @@
 @media screen and (max-width: 900px) {
   .vr-content img {
     display: block;
-    float: center;
+    float: none;
     max-width: 100%;
     margin: auto;
   }
@@ -245,7 +242,9 @@
   margin-top: 10px;
 }
 .creations-content .creations-title .button {
-  background-color: black;
+  border-style: solid;
+  border-color: black;
+  background-color: white;
   padding: 10px 35px;
 }
 @media screen and (max-width: 600px) {
@@ -254,13 +253,16 @@
   }
 }
 .creations-content .creations-title .button:hover {
-  opacity: 0.8;
+  background-color: black;
   cursor: pointer;
+}
+.creations-content .creations-title .button:hover a {
+  color: white;
 }
 .creations-content .creations-title .button a {
   text-transform: uppercase;
   text-decoration: none;
-  color: white;
+  color: black;
   font-family: "Alata", sans-serif;
   letter-spacing: 5px;
 }
@@ -346,6 +348,10 @@
     text-align: center;
     margin: auto;
     font-weight: 400;
+  }
+  .creations-content .btn-all:hover {
+    background-color: black;
+    color: white;
   }
 }
 
