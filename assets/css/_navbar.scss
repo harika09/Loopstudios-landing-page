@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+@import "colors";
+@import "media-queries";
+
+.header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  z-index: 100;
+  transition: 0.5s;
+
+  @include tablet {
+    padding: 25px 0;
+
+    &.active {
+      background-color: black;
+    }
+
+    &-menu-toggle {
+      position: relative;
+      width: 50px;
+      height: 30px;
+      background: url(/assets/img/icon-hamburger.svg) no-repeat;
+      background-size: 25px;
+      cursor: pointer;
+
+      &.active {
+        background: url(/assets/img/icon-close.svg) no-repeat;
+        background-size: 25px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  li {
+    list-style: none;
+    margin-left: 30px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $White;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+  }
+
+  .logo img {
+    width: 150px;
+    max-width: 100%;
+  }
+
+  &.sticky {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 20px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+
+    &.active {
+      background-color: black;
+    }
+  }
+
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-nav-menu {
+    position: relative;
+    display: flex;
+
+    li a:hover {
+      border-bottom: 3px solid $White;
+      border-width: 2px;
+    }
+
+    @include tablet {
+      display: none;
+
+      &.active {
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        height: 100%;
+        background-color: $Black;
+        position: fixed;
+        top: 65px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        border-radius: 4px;
+      }
+
+      & li {
+        margin-left: 0;
+        margin-bottom: 50px;
+
+        & a {
+          font-size: 1.5rem;
+          color: $White;
+          margin-left: 40px;
+          text-transform: uppercase;
+
+          &:hover {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}

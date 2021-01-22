@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+@import "colors";
+@import "navbar";
+@import "media-queries";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* Layout */
+.bd-container {
+  max-width: 1024px;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  padding: 0 1rem;
+
+  @media screen and (min-width: 1024px) {
+    & {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+.hero {
+  background: url(/assets/img/desktop/image-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &-content {
+    min-height: 80vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  &-text {
+    border-style: solid;
+    border-color: $White;
+    width: 450px;
+    float: left;
+    padding: 20px;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 3.5rem;
+      color: $White;
+
+      @include mobile {
+        & {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.vr {
+  margin-top: 40px;
+
+  &-content {
+    display: flex;
+    justify-content: left;
+    position: relative;
+    margin-bottom: 80px;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+    img {
+      display: block;
+      float: left;
+      width: 550px;
+      height: auto;
+
+      @include tablet {
+        display: block;
+        float: center;
+        max-width: 100%;
+        margin: auto;
+      }
+    }
+
+    .vr-info {
+      position: absolute;
+      left: 460px;
+      top: 120px;
+      right: 0;
+      background-color: white;
+      padding: 60px;
+      width: 550px;
+      max-width: 100%;
+
+      @include tablet {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 50px;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        width: 350px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+
+        @include tablet {
+          font-size: 1.8rem;
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      p {
+        width: 450px;
+
+        @include tablet {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.creations {
+  margin-top: 40px;
+
+  &-content {
+    .creations-title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      @include mobile {
+        & {
+          justify-content: center;
+        }
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: 100;
+        margin-top: 10px;
+      }
+
+      .button {
+        background-color: black;
+        padding: 10px 35px;
+
+        @include mobile {
+          display: none;
+        }
+
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
+
+        a {
+          text-transform: uppercase;
+          text-decoration: none;
+          color: $White;
+          font-family: "Alata", sans-serif;
+          letter-spacing: 5px;
+        }
+      }
+    }
+
+    .grid {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      justify-content: center;
+      margin-bottom: 40px;
+
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include mobile {
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
+
+        .desktop-img {
+          display: none;
+        }
+      }
+
+      &-image {
+        position: relative;
+        margin-top: 40px;
+
+        &:hover {
+          h3 {
+            color: $Black;
+            font-weight: bold;
+            opacity: 1;
+          }
+        }
+
+        .mobile-img {
+          display: none;
+
+          @include mobile {
+            & {
+              display: block;
+            }
+          }
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+
+          &:hover {
+            opacity: 0.6;
+          }
+
+          @include tablet {
+            & {
+              width: 100%;
+            }
+          }
+        }
+
+        h3 {
+          text-transform: uppercase;
+          font-size: 1.5rem;
+          width: 110px;
+          position: absolute;
+          bottom: 40px;
+          left: 30px;
+          color: white;
+
+          @include mobile {
+            width: 150px;
+            bottom: 20px;
+            font-size: 1.2;
+          }
+        }
+      }
+    }
+
+    .btn-all {
+      display: none;
+
+      @include mobile {
+        & {
+          display: block;
+          text-decoration: none;
+          background-color: white;
+          border-style: solid;
+          border-color: $Black;
+          color: $Black;
+          padding: 15px 25px;
+          width: 50%;
+          text-align: center;
+          margin: auto;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: 80px;
+  background-color: $Black;
+
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    padding: 40px;
+
+    @include tablet {
+      & {
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+      }
+    }
+
+    img {
+      margin-bottom: 40px;
+
+      @include tablet {
+        display: block;
+        margin: auto;
+      }
+    }
+
+    .footer-nav-menu {
+      display: flex;
+      margin-top: 10px;
+
+      li {
+        list-style: none;
+        margin-right: 15px;
+
+        @include tablet {
+          margin-top: 20px;
+          text-align: center;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: $White;
+        font-size: 1.2rem;
+      }
+
+      @include tablet {
+        & {
+          flex-direction: column;
+          margin-bottom: 40px;
+        }
+      }
+    }
+
+    .social {
+      display: flex;
+      flex-direction: column;
+      &-image {
+        text-align: right;
+        color: white;
+        font-size: 2rem;
+
+        & i {
+          margin-right: 20px;
+        }
+
+        @include tablet {
+          text-align: center;
+        }
+      }
+
+      span {
+        display: block;
+        color: $White;
+        font-size: 0.8rem;
+        margin-top: 55px;
+        text-align: right;
+
+        @include tablet {
+          & {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
